@@ -19,12 +19,21 @@ jobs:
         with:
           images: ghcr.io/cliffeh/flask-hello-world
           tags: v1
+
+      # QEMU and buildx for multi-arch support
+      - name: Set up QEMU
+        uses: docker/setup-qemu-action@v3
+
+      - name: Set up Docker Buildx
+        uses: docker/setup-buildx-action@v3
+
       - name: Login to GHCR
         uses: docker/login-action@v3
         with:
           registry: ghcr.io
           username: ${{ github.repository_owner }}
           password: ${{ secrets.GITHUB_TOKEN }}
+
       - name: Build container
         uses: docker/build-push-action@v6
         with:
