@@ -28,3 +28,4 @@ README.md
 
 # k8s-related files
 deployment.yaml
+service.yaml
