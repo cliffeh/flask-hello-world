@@ -1,7 +1,7 @@
 apiVersion: apps/v1
 kind: Deployment
 metadata:
-  name: flask-hello-world-deployment
+  name: flask-hello-world
 spec:
   replicas: 3
   selector:
@@ -14,6 +14,6 @@ spec:
     spec:
       containers:
       - name: flask-hello-world
-        image: ghcr.io/cliffeh/flask-hello-world:v1
+        image: ghcr.io/cliffeh/flask-hello-world:v1-multiarch
         ports:
         - containerPort: 5000
