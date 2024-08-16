@@ -11,7 +11,7 @@ def inject_hostname(response):
     response.headers['X-Server-Hostname'] = hostname
     return response
 
-@app.route("/")
+@app.route("/hello")
 def hello_world():
     return "Hello, World!"
 
